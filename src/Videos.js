@@ -7,10 +7,14 @@ console.log("https://www.youtube.com/v/" + videos[0].snippet.resourceId.videoId)
 function addVideo(source2) {
     var btn = document.createElement("iframe");     
     btn.src = source2;   
-    btn.height = 281;
-    btn.width = 500;          
+    btn.height = 225;
+    btn.width = 400;          
     document.body.appendChild(btn);
     
+  }
+
+  for(let index = 0; index < 100; index++) {
+    addVideo("https://www.youtube.com/embed/" + videos[index].snippet.resourceId.videoId)
   }
 
 const Videos  = () =>(
@@ -18,9 +22,7 @@ const Videos  = () =>(
         <h2>Videos tab????</h2>
 
         <div>
-            {addVideo("https://www.youtube.com/embed/" + videos[0].snippet.resourceId.videoId)}
-            {addVideo("https://www.youtube.com/embed/" + videos[1].snippet.resourceId.videoId)}
-            {addVideo("https://www.youtube.com/embed/" + videos[2].snippet.resourceId.videoId)}
+            
         </div>
     </div>
 )
