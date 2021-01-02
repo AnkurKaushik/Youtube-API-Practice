@@ -1,30 +1,25 @@
 import React from 'react';
-import videos from './videos.json';
+import Vid from './Vid';
+
 //var source = "https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com";
+//const s = ['CUwDZLhnfes', 'w_cJYKM7J2Q'];
+const videoArry = []
 
-console.log("https://www.youtube.com/v/" + videos[0].snippet.resourceId.videoId)
-
-function addVideo(source2) {
-    var btn = document.createElement("iframe");     
-    btn.src = source2;   
-    btn.height = 225;
-    btn.width = 400;          
-    document.body.appendChild(btn);
-    
-  }
-
-  for(let index = 0; index < 100; index++) {
-    addVideo("https://www.youtube.com/embed/" + videos[index].snippet.resourceId.videoId)
-  }
+const key = "https://www.youtube.com/embed/";
+for (const [index, value] of Vid.entries()) {
+    videoArry.push(<li key={index}>{value}</li>)
+    videoArry.push(<iframe title={value} src={key + value} height="225" width="400"></iframe>)
+}
 
 const Videos  = () =>(
     <div>
-        <h2>Videos tab????</h2>
-
-        <div>
-            
-        </div>
+        <h2>Videos tab</h2>
+        <input type="text" className="input" placeholder="Search..." />
+        <div> </div>
+        {videoArry}
     </div>
 )
 
+
 export default Videos;
+
