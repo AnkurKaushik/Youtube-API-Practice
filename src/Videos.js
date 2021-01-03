@@ -1,5 +1,5 @@
 import React from 'react';
-import Vid, { titleArry } from './Vid';
+import Vid from './Vid';
 //const cpyTitle = titleArry;
 
 const Videos  = () =>(

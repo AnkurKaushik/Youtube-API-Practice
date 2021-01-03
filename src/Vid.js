@@ -13,17 +13,18 @@ const titles = []
     document.body.appendChild(vid);
 } */
 
-const videoArry = []
-const titleArry = []
 for(let index = 0; index < 100; index++) {
     //addVideo("https://www.youtube.com/embed/" + videos[index].snippet.resourceId.videoId)
     vids.push(videos[index].snippet.resourceId.videoId);
     titles.push(videos[index].snippet.title);
 } 
 
+const videoArry = []
+const titleArry = []
+
 const key = "https://www.youtube.com/embed/";
 for (const [index, value] of vids.entries()) {
-    titleArry.push(<li key={index}>{titles[index]}</li>)
+    titleArry.push(titles[index])
     videoArry.push(<iframe title={titles[index]} src={key + value} height="225" width="400"></iframe>)
 }
 

@@ -3,6 +3,8 @@ import './App.css';
 import Home from './Home.js';
 import About from './About.js';
 import Videos from './Videos.js';
+import TestSB from './TestSB';
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Navigation';
 
@@ -17,6 +19,7 @@ function App() {
              <Route path="/" component={Home} exact/>
              <Route path="/about" component={About}/>
              <Route path="/videos" component={Videos}/>
+             <Route path="/testsb" component={TestSB}/>
             <Route component={Error}/>
            </Switch>
         </div> 
