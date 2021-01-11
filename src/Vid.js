@@ -19,15 +19,12 @@ for(let index = 0; index < 100; index++) {
     titles.push(videos[index].snippet.title);
 } 
 
-const videoArry = []
-const titleArry = []
+const vidArry = Array(100).fill().map(()=>Array(2).fill())
 
 const key = "https://www.youtube.com/embed/";
 for (const [index, value] of vids.entries()) {
-    titleArry.push(titles[index])
-    videoArry.push(<iframe title={titles[index]} src={key + value} height="225" width="400"></iframe>)
+    vidArry[index][0] = titles[index]
+    vidArry[index][1] = <iframe title={titles[index]} src={key + value} height="225" width="400"></iframe>
 }
 
-export {titleArry};
-
-export default videoArry; 
+export default vidArry; 
